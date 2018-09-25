@@ -1,24 +1,76 @@
-# README
+# Structure of DataBase
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## user
+### table
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false, index: true, unique: true|
+|profile|text||
 
-Things you may want to cover:
+### association
+- has_many :coordinates
+### plan
+- use instagram API
 
-* Ruby version
+## coordinates
+### table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|gender_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
-* System dependencies
+### association
+- belongs_to :user
+- belongs_to :gender
+- has_many :color-tags, through: coordinate_color-tags
+- has_many :category-tags, through: coordinate_category-tags
 
-* Configuration
+## genders
+### table
+|Column|Type|Options|
+|------|----|-------|
+|gender|boolean||
 
-* Database creation
+### association
+- has_many :coordinates
 
-* Database initialization
+## color-tags
+### table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true, unique: true|
 
-* How to run the test suite
+### association
+- has_many :coordinates, through: coordinate_color-tags
 
-* Services (job queues, cache servers, search engines, etc.)
+## coordinate_color-tags
+### table
+|Column|Type|Options|
+|------|----|-------|
+|coordinate_id|references|null: false, foreign_key: true|
+|color-tag_id|references|null: false, foreign_key: true|
 
-* Deployment instructions
+### association
+- belongs_to :coordinate
+- belongs_to :color-tag
 
-* ...
+## category-tags
+### table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true, unique: true|
+
+### association
+- has_many :coordinates, through: coordinate_category-tags
+
+## coordinate_category-tags
+### table
+|Column|Type|Options|
+|------|----|-------|
+|coordinate_id|references|null: false, foreign_key: true|
+|category-tag_id|references|null: false, foreign_key: true|
+
+### association
+- belongs_to :coordinate
+- belongs_to :category-tag
