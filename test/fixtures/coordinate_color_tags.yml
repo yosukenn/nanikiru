@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coordinate: one
+  color_tag: one
+
+two:
+  coordinate: two
+  color_tag: two
