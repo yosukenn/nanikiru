@@ -1,0 +1,2 @@
+class ColorTag < ApplicationRecord
+end
