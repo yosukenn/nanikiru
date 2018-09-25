@@ -25,3 +25,12 @@
 - belongs_to :gender
 - has_many :color-tags, through: coordinate_color-tags
 - has_many :category-tags, through: coordinate_category-tags
+
+## genders
+### table
+|Column|Type|Options|
+|------|----|-------|
+|gender|boolean||
+
+### association
+- has_many :coordinates
