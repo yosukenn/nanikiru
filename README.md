@@ -44,6 +44,17 @@
 ### association
 - has_many :coordinates, through: coordinate_color-tags
 
+## coordinate_color-tags
+### table
+|Column|Type|Options|
+|------|----|-------|
+|coordinate_id|references|null: false, foreign_key: true|
+|color-tag_id|references|null: false, foreign_key: true|
+
+### association
+- belongs_to :coordinate
+- belongs_to :color-tag
+
 ## category-tags
 ### table
 |Column|Type|Options|
@@ -52,3 +63,14 @@
 
 ### association
 - has_many :coordinates
+
+## coordinate_category-tags
+### table
+|Column|Type|Options|
+|------|----|-------|
+|coordinate_id|references|null: false, foreign_key: true|
+|category-tag_id|references|null: false, foreign_key: true|
+
+### association
+- belongs_to :coordinate
+- belongs_to :category-tag
