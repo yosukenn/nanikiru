@@ -34,3 +34,12 @@
 
 ### association
 - has_many :coordinates
+
+## color-tags
+### table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+
+### association
+- has_many :coordinates, through: coordinate_color-tags
