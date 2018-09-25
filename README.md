@@ -62,7 +62,7 @@
 |name|string|null: false, index: true, unique: true|
 
 ### association
-- has_many :coordinates
+- has_many :coordinates, through: coordinate_category-tags
 
 ## coordinate_category-tags
 ### table
