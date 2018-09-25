@@ -4,7 +4,7 @@
 ### table
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false, index: true|
+|nickname|string|null: false, index: true, unique: true|
 |profile|text||
 
 ### association
@@ -39,7 +39,7 @@
 ### table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: true|
+|name|string|null: false, index: true, unique: true|
 
 ### association
 - has_many :coordinates, through: coordinate_color-tags
@@ -59,7 +59,7 @@
 ### table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: true|
+|name|string|null: false, index: true, unique: true|
 
 ### association
 - has_many :coordinates
