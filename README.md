@@ -1,24 +1,13 @@
-# README
+# Structure of DataBase
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## user
+### table
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false, index: true|
+|profile|text||
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### association
+- has_many :coordinates
+### plan
+- use instagram API
