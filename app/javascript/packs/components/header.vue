@@ -17,10 +17,14 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">MyCoorde</a>
+          <router-link to="/about" class="nav-link">
+            MyCoorde
+          </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <router-link to="/about" class="nav-link">
+            About
+          </router-link>
         </li>
       </ul>
     </div>
