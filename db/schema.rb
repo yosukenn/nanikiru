@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180927060010) do
+ActiveRecord::Schema.define(version: 20180927062245) do
 
   create_table "category_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20180927060010) do
   end
 
   create_table "genders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.boolean "gender"
+    t.string "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
