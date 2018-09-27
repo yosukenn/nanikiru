@@ -5,6 +5,10 @@
     <%= devise_error_messages! %>
 
     <div class="field w-25 mx-auto mb-3">
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "email", placeholder: 'Nickname', class: 'form-control' %>
+    </div>
+
+    <div class="field w-25 mx-auto mb-3">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address', class: 'form-control', id: 'inputEmail' %>
     </div>
 
