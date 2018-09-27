@@ -17,6 +17,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
+|image|string|null: false, index: true|
 |gender_id|references|null: false, foreign_key: true|
 |user_id|references|null: false, foreign_key: true|
 
