@@ -71,7 +71,9 @@
         });
       },
       searchCoordinates: function() {
-        if (!this.genderId && !this.colorTag && !this.categoryTag) return;
+        if (!this.genderId && !this.colorTag && !this.categoryTag) {
+          return;
+        }
 
         axios.get('/coordinates', {
           params: {
@@ -80,7 +82,10 @@
             categoryTag: this.categoryTag
           }
         }).then((response) => {
-          this.coordinates = response.data.coordinates;
+          this.coordinates.length = 0;
+          for(var i = 0; i < response.data.coordinates.length; i++) {
+              this.coordinates.push(response.data.coordinates[i]);
+          }
           this.genderId = 1;
           this.colorTag = '';
           this.categoryTag = '';
