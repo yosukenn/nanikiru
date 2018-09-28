@@ -3,5 +3,9 @@ class CoordinatesController < ApplicationController
 
   def index
     @coordinates = Coordinate.order('updated_at DESC')
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 end

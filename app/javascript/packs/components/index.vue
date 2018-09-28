@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <button @submit="searchCoordinates" class="btn btn-primary" type="submit">Search!</button>
+      <button @submit.prevent="searchCoordinates" class="btn btn-primary" type="submit">Search!</button>
     </form>
     <!-- コーディネート一覧 -->
     <div class="card-columns p-5">
@@ -72,17 +72,17 @@
       searchCoordinates: function() {
         if (!this.genderId && !this.colorTag && !this.categoryTag) return;
 
-        axios.get('coordinates', {
-          parmas: {
-            genderId: genderId,
-            colorTag: colorTag,
-            categoryTag: categoryTag
+        axios.get('/coordinates', {
+          params: {
+            genderId: this.genderId,
+            colorTag: this.colorTag,
+            categoryTag: this.categoryTag
           }
         }).then((response) => {
           this.coordinates = response.data.coordinates;
           this.genderId = 1;
-          colorTag = '';
-          categoryTag = '';
+          this.colorTag = '';
+          this.categoryTag = '';
         }, (error) => {
           console.log(error);
         });
