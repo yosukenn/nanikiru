@@ -5,7 +5,10 @@
     <form class="needs-validation px-5" novalidate>
       <div class="form-row">
         <div class="col-md-4 mb-3">
-          <input type="text" class="form-control" placeholder="gender" required>
+          <select class="form-control" required>
+            <option>Mens</option>
+            <option>Womens</option>
+          </select>
           <div class="valid-feedback">
             Looks good!
           </div>
@@ -25,7 +28,7 @@
           </div>
         </div>
       </div>
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-primary" type="submit">Search!</button>
     </form>
     <!-- コーディネート一覧 -->
     <div class="card-columns p-5">
