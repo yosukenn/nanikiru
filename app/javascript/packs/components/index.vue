@@ -5,30 +5,30 @@
     <form class="needs-validation px-5" novalidate>
       <div class="form-row">
         <div class="col-md-4 mb-3">
-          <select class="form-control" required>
-            <option>Mens</option>
-            <option>Womens</option>
+          <select v-model="genderId" class="form-control" required>
+            <option value=1>Mens</option>
+            <option value=2>Womens</option>
           </select>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <input type="text" class="form-control" placeholder="color" required>
+          <input v-model="colorTag" type="text" class="form-control" placeholder="color" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="category" aria-describedby="inputGroupPrepend" required>
+            <input v-model="categoryTag" type="text" class="form-control" placeholder="category" aria-describedby="inputGroupPrepend" required>
             <div class="invalid-feedback">
               Please choose a username.
             </div>
           </div>
         </div>
       </div>
-      <button class="btn btn-primary" type="submit">Search!</button>
+      <button @submit="searchCoordinates" class="btn btn-primary" type="submit">Search!</button>
     </form>
     <!-- コーディネート一覧 -->
     <div class="card-columns p-5">
@@ -51,7 +51,9 @@
     data: function() {
       return {
         coordinates: [],
-        newCoordinate: ''
+        genderId: 1,
+        colorTag: '',
+        categoryTag: ''
       }
     },
     mounted: function() {
@@ -63,6 +65,24 @@
           for(var i = 0; i < response.data.coordinates.length; i++) {
             this.coordinates.push(response.data.coordinates[i]);
           }
+        }, (error) => {
+          console.log(error);
+        });
+      },
+      searchCoordinates: function() {
+        if (!this.genderId && !this.colorTag && !this.categoryTag) return;
+
+        axios.get('coordinates', {
+          parmas: {
+            genderId: genderId,
+            colorTag: colorTag,
+            categoryTag: categoryTag
+          }
+        }).then((response) => {
+          this.coordinates = response.data.coordinates;
+          this.genderId = 1;
+          colorTag = '';
+          categoryTag = '';
         }, (error) => {
           console.log(error);
         });
