@@ -61,7 +61,8 @@
     },
     methods: {
       fetchCoordenates: function() {
-        axios.get('/coordinates').then((response) => {
+        axios.get('/coordinates')
+        .then((response) => {
           for(var i = 0; i < response.data.coordinates.length; i++) {
             this.coordinates.push(response.data.coordinates[i]);
           }
