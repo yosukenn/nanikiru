@@ -1,10 +1,40 @@
 <template>
-  <div class="card-columns p-5">
-    <div v-for="coordinate in coordinates" class="card d-inline-block">
-      <img class="card-img-top" v-bind:src=coordinate.image alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{ coordinate.name }}</h5>
-        <p class="card-text"><small class="text-muted">{{ coordinate.updated_at }}</small></p>
+  <!-- 検索フォーム -->
+  <div>
+    <h1 class="text-center pt-5 pb-3 font-weight-bold">今日の主役は何ですか？</h1>
+    <form class="needs-validation px-5" novalidate>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <input type="text" class="form-control" placeholder="gender" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <input type="text" class="form-control" placeholder="color" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="category" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+    <!-- コーディネート一覧 -->
+    <div class="card-columns p-5">
+      <div v-for="coordinate in coordinates" class="card d-inline-block">
+        <img class="card-img-top" v-bind:src=coordinate.image alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ coordinate.name }}</h5>
+          <p class="card-text"><small class="text-muted">{{ coordinate.updated_at }}</small></p>
+        </div>
       </div>
     </div>
   </div>
