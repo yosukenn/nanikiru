@@ -75,13 +75,13 @@
           return;
         }
 
-        axios.get('/coordinates', JSON.stringify({
+        axios.get('/coordinates', {
           params: {
             gender_id: this.gender_id,
             color_tag: this.color_tag,
             category_tag: this.category_tag
           }
-        })).then((response) => {
+        }).then((response) => {
           this.coordinates.length = 0;
           for(var i = 0; i < response.data.coordinates.length; i++) {
               this.coordinates.push(response.data.coordinates[i]);
