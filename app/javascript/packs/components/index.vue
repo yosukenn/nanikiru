@@ -2,10 +2,10 @@
   <!-- 検索フォーム -->
   <div>
     <h1 class="text-center pt-5 pb-3 font-weight-bold">今日の主役は何ですか？</h1>
-    <form class="needs-validation px-5" novalidate>
+    <form @submit.prevent="searchCoordinates" class="needs-validation px-5" novalidate>
       <div class="form-row">
         <div class="col-md-4 mb-3">
-          <select v-model="genderId" class="form-control" required>
+          <select v-model="gender_id" class="form-control" required>
             <option value=1>Mens</option>
             <option value=2>Womens</option>
           </select>
@@ -14,21 +14,21 @@
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <input v-model="colorTag" type="text" class="form-control" placeholder="color" required>
+          <input v-model="color_tag" type="text" class="form-control" placeholder="color" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <div class="input-group">
-            <input v-model="categoryTag" type="text" class="form-control" placeholder="category" aria-describedby="inputGroupPrepend" required>
+            <input v-model="category_tag" type="text" class="form-control" placeholder="category" aria-describedby="inputGroupPrepend" required>
             <div class="invalid-feedback">
               Please choose a username.
             </div>
           </div>
         </div>
       </div>
-      <button @submit.prevent="searchCoordinates" class="btn btn-primary" type="submit">Search!</button>
+      <button class="btn btn-primary" type="submit">Search!</button>
     </form>
     <!-- コーディネート一覧 -->
     <div class="card-columns p-5">
@@ -51,9 +51,9 @@
     data: function() {
       return {
         coordinates: [],
-        genderId: 1,
-        colorTag: '',
-        categoryTag: ''
+        gender_id: 1,
+        color_tag: '',
+        category_tag: ''
       }
     },
     mounted: function() {
@@ -77,9 +77,9 @@
 
         axios.get('/coordinates', {
           params: {
-            genderId: this.genderId,
-            colorTag: this.colorTag,
-            categoryTag: this.categoryTag
+            gender_id: this.gender_id,
+            color_tag: this.color_tag,
+            category_tag: this.category_tag
           }
         }).then((response) => {
           this.coordinates.length = 0;
