@@ -71,24 +71,24 @@
         });
       },
       searchCoordinates: function() {
-        if (!this.genderId && !this.colorTag && !this.categoryTag) {
+        if (!this.gender_id && !this.color_tag && !this.category_tag) {
           return;
         }
 
-        axios.get('/coordinates', {
+        axios.get('/coordinates', JSON.stringify({
           params: {
             gender_id: this.gender_id,
             color_tag: this.color_tag,
             category_tag: this.category_tag
           }
-        }).then((response) => {
+        })).then((response) => {
           this.coordinates.length = 0;
           for(var i = 0; i < response.data.coordinates.length; i++) {
               this.coordinates.push(response.data.coordinates[i]);
           }
-          this.genderId = 1;
-          this.colorTag = '';
-          this.categoryTag = '';
+          this.gender_id = 1;
+          this.color_tag = '';
+          this.category_tag = '';
         }, (error) => {
           console.log(error);
         });
