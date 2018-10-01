@@ -24,10 +24,10 @@
               <p>{{ coordinate_item.category_class }}</p>
             </div>
             <div class="form-group col-md-6 float-left">
-              <input v-model="coordinate_items.category_name" type="text" class="form-control" placeholder="category">
+              <input v-model="coordinate_item.category_name" type="text" class="form-control" placeholder="category">
             </div>
             <div class="form-group col-md-6 float-right">
-              <input v-model="coordinate_items.category_color" type="text" class="form-control" placeholder="color">
+              <input v-model="coordinate_item.category_color" type="text" class="form-control" placeholder="color">
             </div>
           </div>
           <button type="submit" class="btn btn-primary float-right mr-3">登録！</button>
