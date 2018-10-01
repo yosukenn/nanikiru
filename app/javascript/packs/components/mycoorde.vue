@@ -8,13 +8,22 @@
         <div class="form-group col-md-12">
           <input type="email" class="form-control" placeholder="登録したい画像のURLを入力してください">
         </div>
-        <img class="w-100 px-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcQDaIjUOTO7jDRKoMa7ZU6BcFgGGqUlZKKwovb0pHVEJ1gO9" alt="コーディネートイメージ">
+        <img class="w-100 px-3 my-5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcQDaIjUOTO7jDRKoMa7ZU6BcFgGGqUlZKKwovb0pHVEJ1gO9" alt="コーディネートイメージ">
       </div>
 
       <!-- 右部 -->
       <div class="col">
         <div class="form-group col-md-12">
           <input type="email" class="form-control" placeholder="title">
+        </div>
+        <div class="form-group col-md-12">
+          <h4>アウター</h4>
+        </div>
+        <div class="form-group col-md-6 float-left">
+          <input type="text" class="form-control" placeholder="category">
+        </div>
+        <div class="form-group col-md-6 float-right">
+          <input type="text" class="form-control" placeholder="color">
         </div>
         <div class="form-group col-md-12">
           <h4>トップス</h4>
