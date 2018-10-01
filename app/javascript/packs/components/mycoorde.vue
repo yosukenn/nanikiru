@@ -19,60 +19,18 @@
           <div class="form-group col-md-12">
             <input v-model="coordinate_name" type="text" class="form-control" placeholder="title">
           </div>
-          <div class="form-group col-md-12">
-            <p>アウター</p>
+          <div v-for="coordinate_item in coordinate_items">
+            <div class="form-group col-md-12">
+              <p>{{ coordinate_item.category_class }}</p>
+            </div>
+            <div class="form-group col-md-6 float-left">
+              <input v-model="coordinate_items.category_name" type="text" class="form-control" placeholder="category">
+            </div>
+            <div class="form-group col-md-6 float-right">
+              <input v-model="coordinate_items.category_color" type="text" class="form-control" placeholder="color">
+            </div>
           </div>
-          <div class="form-group col-md-6 float-left">
-            <input type="text" class="form-control" placeholder="category">
-          </div>
-          <div class="form-group col-md-6 float-right">
-            <input type="text" class="form-control" placeholder="color">
-          </div>
-          <div class="form-group col-md-12">
-            <p>トップス</p>
-          </div>
-          <div class="form-group col-md-6 float-left">
-            <input type="text" class="form-control" placeholder="category">
-          </div>
-          <div class="form-group col-md-6 float-right">
-            <input type="text" class="form-control" placeholder="color">
-          </div>
-          <div class="form-group col-md-12">
-            <p>インナー</p>
-          </div>
-          <div class="form-group col-md-6 float-left">
-            <input type="text" class="form-control" placeholder="category">
-          </div>
-          <div class="form-group col-md-6 float-right">
-            <input type="text" class="form-control" placeholder="color">
-          </div>
-          <div class="form-group col-md-12">
-            <p>ボトムス</p>
-          </div>
-          <div class="form-group col-md-6 float-left">
-            <input type="text" class="form-control" placeholder="category">
-          </div>
-          <div class="form-group col-md-6 float-right">
-            <input type="text" class="form-control" placeholder="color">
-          </div>
-          <div class="form-group col-md-12">
-            <p>シューズ</p>
-          </div>
-          <div class="form-group col-md-6 float-left">
-            <input type="text" class="form-control" placeholder="category">
-          </div>
-          <div class="form-group col-md-6 float-right">
-            <input type="text" class="form-control" placeholder="color">
-          </div>
-          <div class="form-group col-md-12">
-            <p>アクセサリ</p>
-          </div>
-          <div class="form-group col-md-6 float-left">
-            <input type="text" class="form-control" placeholder="category">
-          </div>
-          <div class="form-group col-md-6 float-right">
-            <input type="text" class="form-control" placeholder="color">
-          </div>
+
           <button type="submit" class="btn btn-primary float-right mr-3">登録！</button>
         </div>
       </div>
@@ -90,8 +48,12 @@
         coordinate_name : '',
         coordinate_image : '',
         coordinate_items : [
-          {category_name: ''},
-          {category_color: ''},
+          {category_class: 'アウター', category_name: '', category_color: ''},
+          {category_class: 'トップス', category_name: '', category_color: ''},
+          {category_class: 'インナー', category_name: '', category_color: ''},
+          {category_class: 'ボトムス', category_name: '', category_color: ''},
+          {category_class: 'シューズ', category_name: '', category_color: ''},
+          {category_class: 'アクセサリ', category_name: '', category_color: ''},
         ]
       }
     }
