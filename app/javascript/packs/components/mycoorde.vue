@@ -1,7 +1,7 @@
 <template>
   <div class="p-5">
     <h1 class="text-center pt-1 pb-4 font-weight-bold">あなたのお気に入りのコーディネートを登録しよう！</h1>
-    <form>
+    <form @submit.prevent="createCoordinate">
       <div class="form-row">
         <!-- 左部 -->
         <div class="col">
@@ -30,7 +30,6 @@
               <input v-model="coordinate_items.category_color" type="text" class="form-control" placeholder="color">
             </div>
           </div>
-
           <button type="submit" class="btn btn-primary float-right mr-3">登録！</button>
         </div>
       </div>
@@ -55,6 +54,33 @@
           {category_class: 'シューズ', category_name: '', category_color: ''},
           {category_class: 'アクセサリ', category_name: '', category_color: ''},
         ]
+      }
+    },
+    methods: {
+      createCoordinate: function() {
+        axios.post('/coordinates', {
+          params: {
+            gender_id: this.gender_id,
+            coordinate_name: this.coordinate_name,
+            coordinate_image: this.coordinate_image,
+            coordinate_items: this.coordinate_items
+          }
+        })
+        .then((response) => {
+          gender_id = 1,
+          coordinate_name = '',
+          coordinate_image = '',
+          coordinate_items = [
+            {category_class: 'アウター', category_name: '', category_color: ''},
+            {category_class: 'トップス', category_name: '', category_color: ''},
+            {category_class: 'インナー', category_name: '', category_color: ''},
+            {category_class: 'ボトムス', category_name: '', category_color: ''},
+            {category_class: 'シューズ', category_name: '', category_color: ''},
+            {category_class: 'アクセサリ', category_name: '', category_color: ''},
+          ]
+        }, (error) => {
+          console.log(error);
+        });
       }
     }
   }
