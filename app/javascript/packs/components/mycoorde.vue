@@ -19,7 +19,7 @@
           <div class="form-group col-md-12">
             <input v-model="coordinate_name" type="text" class="form-control" placeholder="title">
           </div>
-          <div v-for="coordinate_item in coordinate_items">
+          <div v-for="coordinate_item in coordinate_items" class="clearfix">
             <div class="form-group col-md-12">
               <p>{{ coordinate_item.category_class }}</p>
             </div>
