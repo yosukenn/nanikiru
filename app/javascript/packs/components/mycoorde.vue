@@ -1,8 +1,8 @@
 <template>
   <div class="p-5">
+    <h1 class="text-center pt-1 pb-4 font-weight-bold">あなたのお気に入りのコーディネートを登録しよう！</h1>
   <form>
     <div class="form-row">
-
       <!-- 左部 -->
       <div class="col">
         <div class="form-group col-md-12">
@@ -46,7 +46,7 @@
         <div class="form-group col-md-6 float-right">
           <input type="text" class="form-control" placeholder="color">
         </div>
-      <button type="submit" class="btn btn-primary float-right mr-3">Sign in</button>
+      <button type="submit" class="btn btn-primary float-right mr-3">登録！</button>
     </div>
 
     </div>
