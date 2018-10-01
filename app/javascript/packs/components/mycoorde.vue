@@ -12,7 +12,7 @@
               <option value=2>Womens</option>
             </select>
           </div>
-          <img class="w-100 px-3 my-5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcQDaIjUOTO7jDRKoMa7ZU6BcFgGGqUlZKKwovb0pHVEJ1gO9" alt="コーディネートイメージ">
+          <img v-if="coordinate_image !== ''" class="w-100 px-3 my-5" v-bind:src=coordinate_image alt="コーディネートイメージ">
         </div>
         <!-- 右部 -->
         <div class="col">
