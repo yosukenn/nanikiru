@@ -16,11 +16,8 @@
         <div class="form-group col-md-12">
           <input type="email" class="form-control" placeholder="title">
         </div>
-        <div class="form-group col-md-6 float-left">
-          <input type="text" class="form-control" placeholder="category">
-        </div>
-        <div class="form-group col-md-6 float-right">
-          <input type="text" class="form-control" placeholder="color">
+        <div class="form-group col-md-12">
+          <h4>トップス</h4>
         </div>
         <div class="form-group col-md-6 float-left">
           <input type="text" class="form-control" placeholder="category">
@@ -28,17 +25,35 @@
         <div class="form-group col-md-6 float-right">
           <input type="text" class="form-control" placeholder="color">
         </div>
-        <div class="form-group col-md-6 float-left">
-          <input type="text" class="form-control" placeholder="category">
-        </div>
-        <div class="form-group col-md-6 float-right">
-          <input type="text" class="form-control" placeholder="color">
+        <div class="form-group col-md-12">
+          <h4>インナー</h4>
         </div>
         <div class="form-group col-md-6 float-left">
           <input type="text" class="form-control" placeholder="category">
         </div>
         <div class="form-group col-md-6 float-right">
           <input type="text" class="form-control" placeholder="color">
+        </div>
+        <div class="form-group col-md-12">
+          <h4>ボトムス</h4>
+        </div>
+        <div class="form-group col-md-6 float-left">
+          <input type="text" class="form-control" placeholder="category">
+        </div>
+        <div class="form-group col-md-6 float-right">
+          <input type="text" class="form-control" placeholder="color">
+        </div>
+        <div class="form-group col-md-12">
+          <h4>シューズ</h4>
+        </div>
+        <div class="form-group col-md-6 float-left">
+          <input type="text" class="form-control" placeholder="category">
+        </div>
+        <div class="form-group col-md-6 float-right">
+          <input type="text" class="form-control" placeholder="color">
+        </div>
+        <div class="form-group col-md-12">
+          <h4>アクセサリ</h4>
         </div>
         <div class="form-group col-md-6 float-left">
           <input type="text" class="form-control" placeholder="category">
