@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180927062245) do
+ActiveRecord::Schema.define(version: 20181001042641) do
 
   create_table "category_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
+    t.index ["name", "color"], name: "index_category_tags_on_name_and_color", unique: true
     t.index ["name"], name: "index_category_tags_on_name"
   end
 
