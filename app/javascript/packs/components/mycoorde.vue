@@ -6,8 +6,8 @@
         <!-- 左部 -->
         <div class="col">
           <div class="form-group col-md-12">
-            <input type="text" class="form-control" placeholder="登録したい画像のURLを入力してください">
-            <select class="form-control-sm mt-3 float-right" required>
+            <input v-model="coordinate_image" type="text" class="form-control" placeholder="登録したい画像のURLを入力してください">
+            <select v-model="gender_id" class="form-control-sm mt-3 float-right" required>
               <option value=1>Mens</option>
               <option value=2>Womens</option>
             </select>
@@ -17,7 +17,7 @@
         <!-- 右部 -->
         <div class="col">
           <div class="form-group col-md-12">
-            <input type="text" class="form-control" placeholder="title">
+            <input v-model="coordinate_name" type="text" class="form-control" placeholder="title">
           </div>
           <div class="form-group col-md-12">
             <p>アウター</p>
@@ -89,7 +89,10 @@
         gender_id : 1,
         coordinate_name : '',
         coordinate_image : '',
-        coordinate_categorys : []
+        coordinate_items : [
+          {category_name: ''},
+          {category_color: ''},
+        ]
       }
     }
   }
