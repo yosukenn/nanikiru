@@ -6,17 +6,21 @@
         <!-- 左部 -->
         <div class="col">
           <div class="form-group col-md-12">
-            <input type="email" class="form-control" placeholder="登録したい画像のURLを入力してください">
+            <input type="text" class="form-control" placeholder="登録したい画像のURLを入力してください">
+            <select class="form-control-sm mt-3 float-right" required>
+              <option value=1>Mens</option>
+              <option value=2>Womens</option>
+            </select>
           </div>
           <img class="w-100 px-3 my-5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcQDaIjUOTO7jDRKoMa7ZU6BcFgGGqUlZKKwovb0pHVEJ1gO9" alt="コーディネートイメージ">
         </div>
         <!-- 右部 -->
         <div class="col">
           <div class="form-group col-md-12">
-            <input type="email" class="form-control" placeholder="title">
+            <input type="text" class="form-control" placeholder="title">
           </div>
           <div class="form-group col-md-12">
-            <h4>アウター</h4>
+            <p>アウター</p>
           </div>
           <div class="form-group col-md-6 float-left">
             <input type="text" class="form-control" placeholder="category">
@@ -25,7 +29,7 @@
             <input type="text" class="form-control" placeholder="color">
           </div>
           <div class="form-group col-md-12">
-            <h4>トップス</h4>
+            <p>トップス</p>
           </div>
           <div class="form-group col-md-6 float-left">
             <input type="text" class="form-control" placeholder="category">
@@ -34,7 +38,7 @@
             <input type="text" class="form-control" placeholder="color">
           </div>
           <div class="form-group col-md-12">
-            <h4>インナー</h4>
+            <p>インナー</p>
           </div>
           <div class="form-group col-md-6 float-left">
             <input type="text" class="form-control" placeholder="category">
@@ -43,7 +47,7 @@
             <input type="text" class="form-control" placeholder="color">
           </div>
           <div class="form-group col-md-12">
-            <h4>ボトムス</h4>
+            <p>ボトムス</p>
           </div>
           <div class="form-group col-md-6 float-left">
             <input type="text" class="form-control" placeholder="category">
@@ -52,7 +56,7 @@
             <input type="text" class="form-control" placeholder="color">
           </div>
           <div class="form-group col-md-12">
-            <h4>シューズ</h4>
+            <p>シューズ</p>
           </div>
           <div class="form-group col-md-6 float-left">
             <input type="text" class="form-control" placeholder="category">
@@ -61,7 +65,7 @@
             <input type="text" class="form-control" placeholder="color">
           </div>
           <div class="form-group col-md-12">
-            <h4>アクセサリ</h4>
+            <p>アクセサリ</p>
           </div>
           <div class="form-group col-md-6 float-left">
             <input type="text" class="form-control" placeholder="category">
@@ -75,3 +79,18 @@
     </form>
   </div>
 </template>
+
+<script>
+  import axios from 'axios';
+
+  export default {
+    data: function() {
+      return {
+        gender_id : 1,
+        coordinate_name : '',
+        coordinate_image : '',
+        coordinate_categorys : []
+      }
+    }
+  }
+</script>
