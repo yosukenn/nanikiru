@@ -52,7 +52,7 @@
           {category_class: 'インナー', category_name: '', category_color: ''},
           {category_class: 'ボトムス', category_name: '', category_color: ''},
           {category_class: 'シューズ', category_name: '', category_color: ''},
-          {category_class: 'アクセサリ', category_name: '', category_color: ''},
+          {category_class: 'アクセサリ', category_name: '', category_color: ''}
         ]
       }
     },
@@ -76,7 +76,7 @@
             {category_class: 'インナー', category_name: '', category_color: ''},
             {category_class: 'ボトムス', category_name: '', category_color: ''},
             {category_class: 'シューズ', category_name: '', category_color: ''},
-            {category_class: 'アクセサリ', category_name: '', category_color: ''},
+            {category_class: 'アクセサリ', category_name: '', category_color: ''}
           ]
         }, (error) => {
           console.log(error);

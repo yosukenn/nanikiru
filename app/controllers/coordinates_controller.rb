@@ -15,7 +15,7 @@ class CoordinatesController < ApplicationController
     items = []
 
     coordinate_params[:coordinate_items].each do |coordinate_item|
-      item = @coordinate.category_tags.build(name: coordinate_item.category_name, color: coordinate_item.category_color)
+      item = @coordinate.category_tags.build(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
       if item.valid?
         items << item
       end
@@ -34,7 +34,7 @@ class CoordinatesController < ApplicationController
   private
   def coordinate_params
     params.fetch(:params, {}).permit(
-      :gender_id, :coordinate_name, :coordinate_image, :coordinate_items => []
+      :gender_id, :coordinate_name, :coordinate_image, coordinate_items: [:category_name, :category_color]
     )
   end
 end
