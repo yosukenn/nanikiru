@@ -15,16 +15,13 @@ class CoordinatesController < ApplicationController
     items = []
 
     coordinate_params[:coordinate_items].each do |coordinate_item|
-      item = @coordinate.category_tags.build(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
-      if item.valid?
-        items << item
+      if coordinate_item[:category_name] != '' && coordinate_item[:category_color] != ''
+        @coordinate.category_tags.build(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
       end
     end
 
+    binding.pry
     if @coordinate.save
-      items.each do |item|
-        item.save
-      end
       render :show, status: :created
     else
       render json: @coordinate.errors, status: :unprocessable_entity
