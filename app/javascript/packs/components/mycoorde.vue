@@ -67,10 +67,10 @@
           }
         })
         .then((response) => {
-          gender_id = 1,
-          coordinate_name = '',
-          coordinate_image = '',
-          coordinate_items = [
+          this.gender_id = 1,
+          this.coordinate_name = '',
+          this.coordinate_image = '',
+          this.coordinate_items = [
             {category_class: 'アウター', category_name: '', category_color: ''},
             {category_class: 'トップス', category_name: '', category_color: ''},
             {category_class: 'インナー', category_name: '', category_color: ''},
