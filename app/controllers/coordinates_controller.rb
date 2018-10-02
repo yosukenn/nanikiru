@@ -1,5 +1,6 @@
 class CoordinatesController < ApplicationController
   before_action :authenticate_user!
+  protect_from_forgery except: :create
 
   def index
     if params[:gender_id] && params[:color_tag] && params[:category_tag]
@@ -9,4 +10,28 @@ class CoordinatesController < ApplicationController
     end
   end
 
+  def create
+    @coordinate = Coordinate.new(name: coordinate_params[:coordinate_name], image: coordinate_params[:coordinate_image], gender_id: coordinate_params[:gender_id], user_id: current_user.id)
+    items = []
+
+    coordinate_params[:coordinate_items].each do |coordinate_item|
+      if coordinate_item[:category_name] != '' && coordinate_item[:category_color] != ''
+        @coordinate.category_tags.build(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
+      end
+    end
+
+    binding.pry
+    if @coordinate.save
+      render :show, status: :created
+    else
+      render json: @coordinate.errors, status: :unprocessable_entity
+    end
+  end
+
+  private
+  def coordinate_params
+    params.fetch(:params, {}).permit(
+      :gender_id, :coordinate_name, :coordinate_image, coordinate_items: [:category_name, :category_color]
+    )
+  end
 end

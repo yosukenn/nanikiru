@@ -17,7 +17,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/about" class="nav-link">
+          <router-link to="/mycoorde" class="nav-link">
             MyCoorde
           </router-link>
         </li>
