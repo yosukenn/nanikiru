@@ -25,7 +25,7 @@ class CoordinatesController < ApplicationController
       items.each do |item|
         item.save
       end
-      # render :show, status: :created
+      render :show, status: :created
     else
       render json: @coordinate.errors, status: :unprocessable_entity
     end
