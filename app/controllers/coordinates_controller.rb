@@ -11,14 +11,30 @@ class CoordinatesController < ApplicationController
   end
 
   def create
-    @coordinate = Coordinate.new()
-    # Parameters: {"params"=>{"gender_id"=>1, "coordinate_name"=>"ミリタリーMIX", "coordinate_image"=>"https://pds.exblog.jp/pds/1/201307/01/88/d0252088_18493327.jpg", "coordinate_items"=>[{"category_class"=>"アウター", "category_name"=>"ロングブルゾン", "category_color"=>"カーキ"}, {"category_class"=>"トップス", "category_name"=>"ニット", "category_color"=>"グレー"}, {"category_class"=>"インナー", "category_name"=>"Tシャツ", "category_color"=>"ホワイト"}, {"category_class"=>"ボトムス", "category_name"=>"スウェットパンツ", "category_color"=>"グレー"}, {"category_class"=>"シューズ", "category_name"=>"ブーツ", "category_color"=>"グレー"}, {"category_class"=>"アクセサリ", "category_name"=>"", "category_color"=>""}]}, "coordinate"=>{}}
+    @coordinate = Coordinate.new(name: coordinate_params[:coordinate_name], image: coordinate_params[:coordinate_image], gender_id: coordinate_params[:gender_id], user_id: current_user.id)
+    items = []
+
+    coordinate_params[:coordinate_items].each do |coordinate_item|
+      item = @coordinate.category_tags.build(name: coordinate_item.category_name, color: coordinate_item.category_color)
+      if item.valid?
+        items << item
+      end
+    end
+
+    if @coordinate.save
+      items.each do |item|
+        item.save
+      end
+      # render :show, status: :created
+    else
+      render json: @coordinate.errors, status: :unprocessable_entity
+    end
   end
 
   private
   def coordinate_params
     params.fetch(:params, {}).permit(
-      :gender_id, :coordinate_name, :coordinate_image, :coordinate_items
+      :gender_id, :coordinate_name, :coordinate_image, :coordinate_items => []
     )
   end
 end
