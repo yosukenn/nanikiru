@@ -35,8 +35,8 @@
       </div>
     </form>
     <!-- マイコーディネート部分 -->
+    <h2 class="clearfix pt-5">あなたが登録したコーディネート</h2>
     <div class="card-columns p-5">
-      <h2>あなたが登録したコーディネート</h2>
       <div v-for="coordinate in coordinates" class="card d-inline-block">
         <img class="card-img-top" v-bind:src=coordinate.image alt="Card image cap">
         <div class="card-body">
@@ -68,6 +68,9 @@
         coordinates: []
       }
     },
+    mounted: function() {
+      this.fetchCoordenates();
+    },
     methods: {
       createCoordinate: function() {
         axios.post('/coordinates', {
@@ -90,6 +93,16 @@
             {category_class: 'シューズ', category_name: '', category_color: ''},
             {category_class: 'アクセサリ', category_name: '', category_color: ''}
           ]
+        }, (error) => {
+          console.log(error);
+        });
+      },
+      fetchCoordenates: function() {
+        axios.get('/users')
+        .then((response) => {
+          for(var i = 0; i < response.data.coordinates.length; i++) {
+            this.coordinates.push(response.data.coordinates[i]);
+          }
         }, (error) => {
           console.log(error);
         });
