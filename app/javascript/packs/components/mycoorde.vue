@@ -34,6 +34,17 @@
         </div>
       </div>
     </form>
+    <!-- マイコーディネート部分 -->
+    <div class="card-columns p-5">
+      <h2>あなたが登録したコーディネート</h2>
+      <div v-for="coordinate in coordinates" class="card d-inline-block">
+        <img class="card-img-top" v-bind:src=coordinate.image alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ coordinate.name }}</h5>
+          <p class="card-text"><small class="text-muted">{{ coordinate.updated_at }}</small></p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -53,7 +64,8 @@
           {category_class: 'ボトムス', category_name: '', category_color: ''},
           {category_class: 'シューズ', category_name: '', category_color: ''},
           {category_class: 'アクセサリ', category_name: '', category_color: ''}
-        ]
+        ],
+        coordinates: []
       }
     },
     methods: {

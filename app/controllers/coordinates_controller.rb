@@ -20,7 +20,6 @@ class CoordinatesController < ApplicationController
       end
     end
 
-    binding.pry
     if @coordinate.save
       render :show, status: :created
     else
