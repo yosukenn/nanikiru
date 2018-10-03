@@ -71,7 +71,7 @@
         });
       },
       searchCoordinates: function() {
-        if (!this.gender_id && !this.color_tag && !this.category_tag) {
+        if (this.color_tag == '' && this.category_tag == '') {
           return;
         }
 
