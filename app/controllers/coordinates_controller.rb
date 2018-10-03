@@ -15,12 +15,11 @@ class CoordinatesController < ApplicationController
     items = []
 
     coordinate_params[:coordinate_items].each do |coordinate_item|
-      if coordinate_item[:category_name] != '' && coordinate_item[:category_color] != ''
+      if coordinate_item[:category_name] != '' && coordinate_item[:category_color] != '' && !CategoryTag.find_by(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
         @coordinate.category_tags.build(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
       end
     end
 
-    binding.pry
     if @coordinate.save
       render :show, status: :created
     else

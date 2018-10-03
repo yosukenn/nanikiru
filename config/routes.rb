@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   defaults format: :json do
     resources :coordinates, only: [:index, :create]
+    resources :users, only: :index
   end
 end
