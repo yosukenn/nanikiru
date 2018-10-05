@@ -20,8 +20,8 @@
                     <img src="https://rr.img.naver.jp/mig?src=http%3A%2F%2Fimgcc.naver.jp%2Fkaze%2Fmission%2FUSER%2F20170119%2F40%2F4513860%2F79%2F323x555xc5c7df4ae9c0000ed4152068.jpg%2F300%2F600&twidth=300&theight=600&qlt=80&res_format=jpg&op=r" alt="コーデイメージ">
                   </div>
                   <div class="col">
-                    アウター
-                    <div class="row">
+                    <h5 class="font-weight-bold">アウター</h5>
+                    <div class="row pb-3">
                       <div class="col">
                         color
                       </div>
@@ -29,8 +29,8 @@
                         category
                       </div>
                     </div>
-                    トップス
-                    <div class="row">
+                    <h5 class="font-weight-bold">トップス</h5>
+                    <div class="row pb-3">
                       <div class="col">
                         color
                       </div>
@@ -38,8 +38,8 @@
                         category
                       </div>
                     </div>
-                    インナー
-                    <div class="row">
+                    <h5 class="font-weight-bold">インナー</h5>
+                    <div class="row pb-3">
                       <div class="col">
                         color
                       </div>
@@ -47,8 +47,8 @@
                         category
                       </div>
                     </div>
-                    ボトムス
-                    <div class="row">
+                    <h5 class="font-weight-bold">ボトムス</h5>
+                    <div class="row pb-3">
                       <div class="col">
                         color
                       </div>
@@ -56,8 +56,8 @@
                         category
                       </div>
                     </div>
-                    シューズ
-                    <div class="row">
+                    <h5 class="font-weight-bold">シューズ</h5>
+                    <div class="row pb-3">
                       <div class="col">
                         color
                       </div>
@@ -65,8 +65,8 @@
                         category
                       </div>
                     </div>
-                    アクセサリ
-                    <div class="row">
+                    <h5 class="font-weight-bold">アクセサリ</h5>
+                    <div class="row pb-3">
                       <div class="col">
                         color
                       </div>
