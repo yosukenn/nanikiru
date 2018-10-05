@@ -29,7 +29,7 @@ class CoordinatesController < ApplicationController
   end
 
   def show
-    @coordinate = Coordinate.find(params[:id])
+    @coordinate = Coordinate.find(params[:id].to_i)
   end
 
   private
