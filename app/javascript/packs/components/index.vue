@@ -94,9 +94,10 @@
         });
       },
       show: function() {
-
       },
-      emitModal: function() {
+      emitModal: function(e) {
+        // coordinates#showを動かす ->  emitで情報をオブジェクト式で渡す
+
         this.$emit('show');
       }
     }
