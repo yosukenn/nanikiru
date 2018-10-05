@@ -28,6 +28,10 @@ class CoordinatesController < ApplicationController
     end
   end
 
+  def show
+    @coordinate = Coordinate.find(params[:id])
+  end
+
   private
   def coordinate_params
     params.fetch(:params, {}).permit(
