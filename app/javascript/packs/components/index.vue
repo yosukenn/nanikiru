@@ -32,7 +32,7 @@
     </form>
     <!-- コーディネート一覧 -->
     <div class="card-columns p-5">
-      <div id="show-modal" @click="emitModal" v-for="coordinate in coordinates" class="card d-inline-block">
+      <div id="show-modal" @click="emitModal" v-for="coordinate in coordinates" class="card d-inline-block" :data-id="coordinate.id" >
         <img class="card-img-top" v-bind:src=coordinate.image alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{ coordinate.name }}</h5>
@@ -97,7 +97,8 @@
       },
       emitModal: function(e) {
         // idをパラメータとして送る  ->  coordinates#showを動かす ->  emitで情報をオブジェクト式で渡す
-
+        var id = e.currentTarget.getAttribute('data-id');
+        
         this.$emit('show');
       }
     }
