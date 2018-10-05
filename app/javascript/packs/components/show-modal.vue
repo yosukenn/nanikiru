@@ -1,8 +1,8 @@
 <template>
     <transition name="modal">
     <div class="modal-mask">
-      <div class="modal-wrapper modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-container modal-content">
+      <div class="modal-wrapper">
+        <div class="modal-container">
 
           <div class="modal-header">
             <slot name="header">
