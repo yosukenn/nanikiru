@@ -16,8 +16,8 @@
             <slot name="body">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col">
-                    <img :src=coordinate.image alt="コーデイメージ">
+                  <div class="col-7">
+                    <img class="col" :src=coordinate.image alt="コーデイメージ">
                   </div>
                   <div class="col">
                     <h5 class="font-weight-bold">アウター</h5>
