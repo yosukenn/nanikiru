@@ -32,7 +32,7 @@
     </form>
     <!-- コーディネート一覧 -->
     <div class="card-columns p-5">
-      <div v-for="coordinate in coordinates" class="card d-inline-block">
+      <div id="show-modal" @click="emitModal" v-for="coordinate in coordinates" class="card d-inline-block" :data-id="coordinate.id" >
         <img class="card-img-top" v-bind:src=coordinate.image alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{ coordinate.name }}</h5>
@@ -71,7 +71,7 @@
         });
       },
       searchCoordinates: function() {
-        if (!this.gender_id && !this.color_tag && !this.category_tag) {
+        if (this.color_tag == '' && this.category_tag == '') {
           return;
         }
 
@@ -89,6 +89,21 @@
           this.gender_id = 1;
           this.color_tag = '';
           this.category_tag = '';
+        }, (error) => {
+          console.log(error);
+        });
+      },
+      show: function() {
+      },
+      emitModal: function(e) {
+        // idをパラメータとして送る  ->  coordinates#showを動かす ->  emitで情報をオブジェクト式で渡す
+        var id = e.currentTarget.getAttribute('data-id');
+        axios.get('/coordinates/' + id, {
+          params: {
+            id: id
+          }
+        }).then((response) => {
+          this.$emit('show', response.data);
         }, (error) => {
           console.log(error);
         });

@@ -82,6 +82,7 @@
           }
         })
         .then((response) => {
+          this.coordinates.unshift(response.data);
           this.gender_id = 1,
           this.coordinate_name = '',
           this.coordinate_image = '',
