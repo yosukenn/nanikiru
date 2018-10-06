@@ -6,7 +6,7 @@
 
           <div class="modal-header">
             <slot name="header">
-              <h3>春になったら何着よう</h3>
+              <h3>{{ coordinate }}</h3>
             </slot>
             <button class="modal-default-button btn btn-secondary" @click="$emit('close')">
               x
@@ -84,3 +84,9 @@
     </div>
   </transition>
 </template>
+
+<script>
+  export default {
+    props: ['coordinate']
+  }
+</script>

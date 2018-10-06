@@ -103,14 +103,10 @@
             id: id
           }
         }).then((response) => {
-
+          this.$emit('show', response.data);
         }, (error) => {
-          
+          console.log(error);
         });
-
-
-
-        this.$emit('show');
       }
     }
   }

@@ -7,10 +7,17 @@ var app = new Vue({
   router: Router,
   el: '#app',
   data: {
-    showModal: false
+    showModal: false,
+    coordinateInfo: ""
   },
   components: {
     'navbar': Header,
     'modal': ShowModal
+  },
+  methods: {
+    flowCoordinate: function(data) {
+      this.showModal = true;
+      return;
+    }
   }
 });
