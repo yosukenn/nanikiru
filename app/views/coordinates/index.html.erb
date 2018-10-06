@@ -2,7 +2,7 @@
   <navbar></navbar>
   <div class="container">
     <router-view @show="flowCoordinate($event)"></router-view>
-    <modal coordinate="タイトル" v-if="showModal" @close="showModal = false">
+    <modal v-bind:coordinate="coordinateInfo" v-if="showModal" @close="showModal = false">
   </div>
 </div>
 

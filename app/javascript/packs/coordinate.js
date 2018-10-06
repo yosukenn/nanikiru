@@ -17,6 +17,7 @@ var app = new Vue({
   methods: {
     flowCoordinate: function(data) {
       this.showModal = true;
+      this.coordinateInfo = data
       return;
     }
   }

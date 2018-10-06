@@ -6,7 +6,7 @@
 
           <div class="modal-header">
             <slot name="header">
-              <h3>{{ coordinate }}</h3>
+              <h3>{{ coordinate.name }}</h3>
             </slot>
             <button class="modal-default-button btn btn-secondary" @click="$emit('close')">
               x
