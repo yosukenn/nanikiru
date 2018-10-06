@@ -102,7 +102,13 @@
           params: {
             id: id
           }
-        })
+        }).then((response) => {
+
+        }, (error) => {
+          
+        });
+
+
 
         this.$emit('show');
       }
