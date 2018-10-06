@@ -20,52 +20,7 @@
                     <img class="col" :src=coordinate.image alt="コーデイメージ">
                   </div>
                   <div class="col">
-                    <h5 class="font-weight-bold">アウター</h5>
-                    <div class="row pb-3">
-                      <div class="col">
-                        color
-                      </div>
-                      <div class="col">
-                        category
-                      </div>
-                    </div>
-                    <h5 class="font-weight-bold">トップス</h5>
-                    <div class="row pb-3">
-                      <div class="col">
-                        color
-                      </div>
-                      <div class="col">
-                        category
-                      </div>
-                    </div>
-                    <h5 class="font-weight-bold">インナー</h5>
-                    <div class="row pb-3">
-                      <div class="col">
-                        color
-                      </div>
-                      <div class="col">
-                        category
-                      </div>
-                    </div>
-                    <h5 class="font-weight-bold">ボトムス</h5>
-                    <div class="row pb-3">
-                      <div class="col">
-                        color
-                      </div>
-                      <div class="col">
-                        category
-                      </div>
-                    </div>
-                    <h5 class="font-weight-bold">シューズ</h5>
-                    <div class="row pb-3">
-                      <div class="col">
-                        color
-                      </div>
-                      <div class="col">
-                        category
-                      </div>
-                    </div>
-                    <h5 class="font-weight-bold">アクセサリ</h5>
+                    <h5 class="font-weight-bold">Item Data</h5>
                     <div class="row pb-3">
                       <div class="col">
                         color
