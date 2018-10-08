@@ -6,7 +6,7 @@
 
           <div class="modal-header">
             <slot name="header">
-              <h3>{{ coordinate.name }}</h3>
+              <h3>{{ coordinate.coordinate.name }}</h3>
             </slot>
             <button class="modal-default-button btn btn-secondary" @click="$emit('close')">
               x
@@ -17,16 +17,16 @@
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-7">
-                    <img class="col" :src=coordinate.image alt="コーデイメージ">
+                    <img class="col" :src=coordinate.coordinate.image alt="コーデイメージ">
                   </div>
                   <div class="col">
                     <h5 class="font-weight-bold">Item Data</h5>
-                    <div class="row pb-3">
-                      <div class="col">
-                        color
+                    <div v-for="category in coordinate.categorys" class="row pb-3">
+                      <div class="col-4 pr-0">
+                        {{ category.color }}
                       </div>
                       <div class="col">
-                        category
+                        {{ category.name }}
                       </div>
                     </div>
                   </div>

@@ -30,7 +30,7 @@ class CoordinatesController < ApplicationController
 
   def show
     @coordinate = Coordinate.find(params[:id].to_i)
-    # 付随するカテゴリー情報も追加で取得し、jbuilderで送信する
+    @categorys = @coordinate.category_tags
   end
 
   private
