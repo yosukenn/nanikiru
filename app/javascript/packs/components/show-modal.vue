@@ -22,7 +22,7 @@
                   <div class="col">
                     <h5 class="font-weight-bold">Item Data</h5>
                     <div v-for="category in coordinate.categorys" class="row pb-3">
-                      <div class="col">
+                      <div class="col-4 pr-0">
                         {{ category.color }}
                       </div>
                       <div class="col">
