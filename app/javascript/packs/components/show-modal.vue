@@ -34,6 +34,20 @@
               </div>
             </slot>
           </div>
+          <div v-if="coordinate.coordinate.user_id == coordinate.coordinate.current_user_id" class="modal-footer">
+            <slot name="footer">
+              <button class="modal-default-button btn btn-info">
+                追加
+              </button>
+              <button class="modal-default-button btn btn-info">
+                編集
+              </button>
+              <button class="modal-default-button btn btn-danger">
+                削除
+              </button>
+            </slot>
+          </div>
+
         </div>
       </div>
     </div>
