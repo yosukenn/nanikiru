@@ -26,6 +26,9 @@
             About
           </router-link>
         </li>
+        <li class="nav-item">
+          <a href="/users/sign_out" data-method="delete" class="nav-link">Logout</a>
+        </li>
       </ul>
     </div>
   </nav>
