@@ -55,7 +55,7 @@
         color_tag: '',
         category_tag: ''
       }
-    }
+    },
     mounted: function() {
       this.fetchCoordenates();
     },
