@@ -37,7 +37,12 @@ class CoordinatesController < ApplicationController
   end
 
   def destroy
-    binding.pry
+    coordinate = Coordinate.find(params[:id])
+    if coordinate.destroy
+      head :no_content
+    else
+      render json: coordinate.errors, status: :unprocessable_entity
+    end
   end
 
   private

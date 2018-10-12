@@ -63,7 +63,8 @@
 
           axios.delete('/coordinates/' + id)
           .then((response) => {
-
+            this.$emit('close');
+            
           }, (error) => {
             console.log(error);
           });
