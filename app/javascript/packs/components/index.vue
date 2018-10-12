@@ -96,7 +96,6 @@
       show: function() {
       },
       emitModal: function(e) {
-        // idをパラメータとして送る  ->  coordinates#showを動かす ->  emitで情報をオブジェクト式で渡す
         var id = e.currentTarget.getAttribute('data-id');
         axios.get('/coordinates/' + id, {
           params: {
