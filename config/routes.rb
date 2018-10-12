@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/mycoorde', to: 'coordinates#index'
 
   defaults format: :json do
-    resources :coordinates, only: [:index, :create, :show]
+    resources :coordinates, only: [:index, :create, :show, :update, :destroy]
     resources :users, only: :index
   end
 end

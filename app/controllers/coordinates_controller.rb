@@ -33,6 +33,12 @@ class CoordinatesController < ApplicationController
     @categorys = @coordinate.category_tags
   end
 
+  def update
+  end
+
+  def destroy
+  end
+
   private
   def coordinate_params
     params.fetch(:params, {}).permit(
