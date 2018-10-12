@@ -99,6 +99,7 @@
         });
       },
       fetchCoordenates: function() {
+        this.coordinates.length = 0;
         axios.get('/users')
         .then((response) => {
           for(var i = 0; i < response.data.coordinates.length; i++) {
