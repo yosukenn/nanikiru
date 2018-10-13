@@ -36,7 +36,7 @@
           </div>
           <div v-if="coordinate.coordinate.user_id == coordinate.coordinate.current_user_id" class="modal-footer">
             <slot name="footer">
-              <button class="modal-default-button btn btn-warning">
+              <button @click="showEdit" class="modal-default-button btn btn-warning">
                 編集
               </button>
               <button @click="deleteCoordinate" class="modal-default-button btn btn-danger">
@@ -56,6 +56,11 @@
 
   export default {
     props: ['coordinate'],
+    data: function() {
+      return {
+          editModal: false
+      }
+    },
     methods: {
       deleteCoordinate: function() {
         if (window.confirm("are you sure ?")) {
@@ -72,6 +77,9 @@
         } else {
           return false
         }
+      },
+      showEdit: function() {
+        this.editModal = true;
       }
     }
   }
