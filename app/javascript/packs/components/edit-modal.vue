@@ -2,10 +2,11 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div  class="modal-container">
+          <form>
 
           <div class="modal-header">
             <slot name="header">
-              <h3>{{ editTarget.coordinate.name }}</h3>
+              <h3><input v-model="coordinate_name" type="text" class="form-control"></h3>
             </slot>
             <button class="modal-default-button btn btn-secondary" @click="$emit('close')">
               x
@@ -21,11 +22,19 @@
                   <div class="col">
                     <h5 class="font-weight-bold">Item Data</h5>
                     <div v-for="category in editTarget.categorys" class="row pb-3">
-                      <div class="col-4 pr-0">
-                        {{ category.color }}
+                      <div class="col">
+                        <input v-model="category.color" type="text" class="form-control">
                       </div>
                       <div class="col">
-                        {{ category.name }}
+                        <input v-model="category.name" type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="color">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="category">
                       </div>
                     </div>
                   </div>
@@ -35,11 +44,12 @@
           </div>
           <div class="modal-footer">
             <slot name="footer">
-              <button class="modal-default-button btn btn-warning">
+              <button @click="updateCoordinate" class="modal-default-button btn btn-warning">
                 更新
               </button>
             </slot>
           </div>
+        </form>
 
         </div>
       </div>
@@ -48,6 +58,20 @@
 
 <script>
   export default {
-    props: ['editTarget']
+    props: ['editTarget'],
+    data: function() {
+      return {
+        gender_id : this.editTarget.coordinate.gender_id,
+        coordinate_name : this.editTarget.coordinate.name,
+        coordinate_image : this.editTarget.coordinate.image,
+        coordinate_items : this.editTarget.categorys
+      }
+    },
+    methods: {
+      updateCoordinate: function() {
+        this.$parent.editModal = false;
+        this.$root.showModal = false;
+      }
+    }
   }
 </script>
