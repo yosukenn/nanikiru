@@ -18,6 +18,8 @@ class CoordinatesController < ApplicationController
     coordinate_params[:coordinate_items].each do |coordinate_item|
       if coordinate_item[:category_name] != '' && coordinate_item[:category_color] != '' && !CategoryTag.find_by(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
         @coordinate.category_tags.build(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
+      elsif category = CategoryTag.find_by(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
+        @coordinate.category_tags << category
       end
     end
 
