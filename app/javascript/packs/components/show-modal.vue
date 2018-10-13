@@ -1,5 +1,6 @@
 <template>
     <transition name="modal">
+      <div>
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
@@ -48,11 +49,14 @@
         </div>
       </div>
     </div>
+    <edit-modal v-if="editModal"></edit-modal>
+  </div>
   </transition>
 </template>
 
 <script>
   import axios from 'axios';
+  import EditModal from './edit-modal.vue'
 
   export default {
     props: ['coordinate'],
@@ -60,6 +64,9 @@
       return {
           editModal: false
       }
+    },
+    components: {
+      'edit-modal': EditModal
     },
     methods: {
       deleteCoordinate: function() {
