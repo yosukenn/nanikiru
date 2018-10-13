@@ -39,7 +39,7 @@
               <button class="modal-default-button btn btn-warning">
                 編集
               </button>
-              <button class="modal-default-button btn btn-danger">
+              <button @click="deleteCoordinate" class="modal-default-button btn btn-danger">
                 削除
               </button>
             </slot>
@@ -52,7 +52,27 @@
 </template>
 
 <script>
+  import axios from 'axios';
+
   export default {
-    props: ['coordinate']
+    props: ['coordinate'],
+    methods: {
+      deleteCoordinate: function() {
+        if (window.confirm("are you sure ?")) {
+          var id = this.coordinate.coordinate.id;
+
+          axios.delete('/coordinates/' + id)
+          .then((response) => {
+            this.$emit('delete', id);
+            this.$emit('close');
+          }, (error) => {
+            console.log(error);
+          });
+
+        } else {
+          return false
+        }
+      }
+    }
   }
 </script>
