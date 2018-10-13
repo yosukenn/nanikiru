@@ -1,10 +1,9 @@
 <template>
     <transition name="modal">
-      <div>
+    <div>
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
-
           <div class="modal-header">
             <slot name="header">
               <h3>{{ coordinate.coordinate.name }}</h3>
@@ -45,11 +44,10 @@
               </button>
             </slot>
           </div>
-
         </div>
       </div>
     </div>
-    <edit-modal v-if="editModal"></edit-modal>
+    <edit-modal :editTarget="coordinate" v-if="editModal" @close="editModal = false"></edit-modal>
   </div>
   </transition>
 </template>
