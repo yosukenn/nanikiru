@@ -1,8 +1,8 @@
 <div id="app">
   <navbar></navbar>
   <div class="container">
-    <router-view @show="flowCoordinate($event)"></router-view>
-    <modal v-bind:coordinate="coordinateInfo" v-if="showModal" @close="showModal = false">
+    <router-view ref="index" @show="flowCoordinate($event)"></router-view>
+    <modal @delete="removeCoordinate($event)" v-bind:coordinate="coordinateInfo" v-if="showModal" @close="showModal = false">
   </div>
 </div>
 

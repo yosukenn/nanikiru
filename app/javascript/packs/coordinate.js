@@ -19,6 +19,10 @@ var app = new Vue({
       this.showModal = true;
       this.coordinateInfo = data;
       return;
+    },
+    removeCoordinate: function(data) {
+      var index = this.$refs.index.coordinates.findIndex(({id}) => id == data);
+      this.$refs.index.coordinates.splice(index, 1);
     }
   }
 });
