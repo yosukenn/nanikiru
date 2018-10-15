@@ -47,6 +47,8 @@
 </template>
 
 <script>
+  import axios from 'axios';
+
   export default {
     props: ['editTarget'],
     data: function() {
@@ -63,7 +65,19 @@
         this.$root.showModal = false;
       },
       editCoordinate: function() {
-        console.log("成功");
+        var id = this.editTarget.coordinate.id
+
+        axios.patch('/coordinates/' + id, {
+          editInfo: {
+            coordinate_name: this.coordinate_name,
+            coordinate_items: this.coordinate_items
+          }
+        })
+        .then((response) => {
+
+        }, (error) => {
+          console.log(error);
+        });
       }
     }
   }
