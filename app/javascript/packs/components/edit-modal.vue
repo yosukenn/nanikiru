@@ -1,9 +1,8 @@
 <template>
     <div class="modal-mask">
       <div class="modal-wrapper">
-        <div  class="modal-container">
+        <div @submit.prevent="editCoordinate" class="modal-container">
           <form>
-
           <div class="modal-header">
             <slot name="header">
               <h3><input v-model="coordinate_name" type="text" class="form-control"></h3>
@@ -17,7 +16,7 @@
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-7">
-                    <img class="col" :src="editTarget.coordinate.image" alt="コーデイメージ">
+                    <img class="col" :src="coordinate_image" alt="コーデイメージ">
                   </div>
                   <div class="col">
                     <h5 class="font-weight-bold">Item Data</h5>
@@ -36,13 +35,12 @@
           </div>
           <div class="modal-footer">
             <slot name="footer">
-              <button @click="updateCoordinate" class="modal-default-button btn btn-warning">
+              <button type="submit" @click="updateCoordinate" class="modal-default-button btn btn-warning">
                 更新
               </button>
             </slot>
           </div>
         </form>
-
         </div>
       </div>
     </div>
@@ -63,6 +61,9 @@
       updateCoordinate: function() {
         this.$parent.editModal = false;
         this.$root.showModal = false;
+      },
+      editCoordinate: function() {
+        console.log("成功");
       }
     }
   }
