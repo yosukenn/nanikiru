@@ -29,14 +29,6 @@
                         <input v-model="category.name" type="text" class="form-control">
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="color">
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="category">
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
