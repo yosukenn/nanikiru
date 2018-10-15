@@ -1,7 +1,7 @@
 <template>
     <div class="modal-mask">
       <div class="modal-wrapper">
-        <div @submit.prevent="editCoordinate" class="modal-container">
+        <div @submit.prevent="updateCoordinate" class="modal-container">
           <form>
           <div class="modal-header">
             <slot name="header">
@@ -35,7 +35,7 @@
           </div>
           <div class="modal-footer">
             <slot name="footer">
-              <button type="submit" @click="updateCoordinate" class="modal-default-button btn btn-warning">
+              <button type="submit" class="modal-default-button btn btn-warning">
                 更新
               </button>
             </slot>
@@ -61,10 +61,6 @@
     },
     methods: {
       updateCoordinate: function() {
-        this.$parent.editModal = false;
-        this.$root.showModal = false;
-      },
-      editCoordinate: function() {
         var id = this.editTarget.coordinate.id
 
         axios.patch('/coordinates/' + id, {
@@ -74,10 +70,14 @@
           }
         })
         .then((response) => {
-          this.coordinate_name = response.data.coordinate.name
+          this.coordinate_name = response.data.coordinate.name;
+          var index = this.$root.$refs.index.coordinates.findIndex(({id}) => id == response.data.coordinate.id);
+          this.$root.$refs.index.coordinates[index].name = this.coordinate_name;
         }, (error) => {
           console.log(error);
         });
+        this.$parent.editModal = false;
+        this.$root.showModal = false;
       }
     }
   }
