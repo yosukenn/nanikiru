@@ -68,13 +68,14 @@
         var id = this.editTarget.coordinate.id
 
         axios.patch('/coordinates/' + id, {
-          editInfo: {
+          params: {
             coordinate_name: this.coordinate_name,
             coordinate_items: this.coordinate_items
           }
         })
         .then((response) => {
-
+          console.log(response.data);
+          this.coordinate_name = response.data.coordinate.name
         }, (error) => {
           console.log(error);
         });

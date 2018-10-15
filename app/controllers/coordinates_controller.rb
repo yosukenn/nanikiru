@@ -36,6 +36,13 @@ class CoordinatesController < ApplicationController
   end
 
   def update
+    # <ActionController::Parameters {"params"=>{"coordinate_name"=>"モノトーンストリート", "coordinate_items"=>[{"name"=>"ブルゾン", "color"=>"ブラック"}, {"name"=>"スウェット", "color"=>"グレー"}, {"name"=>"スニーカー", "color"=>"グレー"}]}, "format"=>:json, "controller"=>"coordinates", "action"=>"update", "id"=>"8", "coordinate"=>{}} permitted: false>
+    @coordinate = Coordinate.find(params[:id])
+    if @coordinate.update(name: coordinate_params[:coordinate_name])
+      render :show, status: :created
+    else
+      render json: @coordinate.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
