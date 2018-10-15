@@ -24,10 +24,10 @@
               <p>{{ coordinate_item.category_class }}</p>
             </div>
             <div class="form-group col-md-6 float-left">
-              <input v-model="coordinate_item.category_name" type="text" class="form-control" placeholder="category">
+              <input v-model="coordinate_item.name" type="text" class="form-control" placeholder="category">
             </div>
             <div class="form-group col-md-6 float-right">
-              <input v-model="coordinate_item.category_color" type="text" class="form-control" placeholder="color">
+              <input v-model="coordinate_item.color" type="text" class="form-control" placeholder="color">
             </div>
           </div>
           <button type="submit" class="btn btn-primary float-right mr-3">登録！</button>
@@ -58,12 +58,12 @@
         coordinate_name : '',
         coordinate_image : '',
         coordinate_items : [
-          {category_class: 'アウター', category_name: '', category_color: ''},
-          {category_class: 'トップス', category_name: '', category_color: ''},
-          {category_class: 'インナー', category_name: '', category_color: ''},
-          {category_class: 'ボトムス', category_name: '', category_color: ''},
-          {category_class: 'シューズ', category_name: '', category_color: ''},
-          {category_class: 'アクセサリ', category_name: '', category_color: ''}
+          {category_class: 'アウター', name: '', color: ''},
+          {category_class: 'トップス', name: '', color: ''},
+          {category_class: 'インナー', name: '', color: ''},
+          {category_class: 'ボトムス', name: '', color: ''},
+          {category_class: 'シューズ', name: '', color: ''},
+          {category_class: 'アクセサリ', name: '', color: ''}
         ],
         coordinates: []
       }
@@ -87,12 +87,12 @@
           this.coordinate_name = '',
           this.coordinate_image = '',
           this.coordinate_items = [
-            {category_class: 'アウター', category_name: '', category_color: ''},
-            {category_class: 'トップス', category_name: '', category_color: ''},
-            {category_class: 'インナー', category_name: '', category_color: ''},
-            {category_class: 'ボトムス', category_name: '', category_color: ''},
-            {category_class: 'シューズ', category_name: '', category_color: ''},
-            {category_class: 'アクセサリ', category_name: '', category_color: ''}
+            {category_class: 'アウター', name: '', color: ''},
+            {category_class: 'トップス', name: '', color: ''},
+            {category_class: 'インナー', name: '', color: ''},
+            {category_class: 'ボトムス', name: '', color: ''},
+            {category_class: 'シューズ', name: '', color: ''},
+            {category_class: 'アクセサリ', name: '', color: ''}
           ]
         }, (error) => {
           console.log(error);

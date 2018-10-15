@@ -1,6 +1,6 @@
 class CoordinatesController < ApplicationController
   before_action :authenticate_user!
-  protect_from_forgery except: :create
+  protect_from_forgery except: [:create, :update]
 
   def index
     if params[:gender_id] && params[:color_tag] && params[:category_tag]
@@ -16,9 +16,9 @@ class CoordinatesController < ApplicationController
     items = []
 
     coordinate_params[:coordinate_items].each do |coordinate_item|
-      if coordinate_item[:category_name] != '' && coordinate_item[:category_color] != '' && !CategoryTag.find_by(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
-        @coordinate.category_tags.build(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
-      elsif category = CategoryTag.find_by(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
+      if coordinate_item[:name] != '' && coordinate_item[:color] != '' && !CategoryTag.find_by(name: coordinate_item[:name], color: coordinate_item[:color])
+        @coordinate.category_tags.build(name: coordinate_item[:name], color: coordinate_item[:color])
+      elsif category = CategoryTag.find_by(name: coordinate_item[:name], color: coordinate_item[:color])
         @coordinate.category_tags << category
       end
     end
@@ -36,6 +36,21 @@ class CoordinatesController < ApplicationController
   end
 
   def update
+    # <ActionController::Parameters {"params"=>{"coordinate_name"=>"モノトーンストリート", "coordinate_items"=>[{"name"=>"ブルゾン", "color"=>"ブラック"}, {"name"=>"スウェット", "color"=>"グレー"}, {"name"=>"スニーカー", "color"=>"グレー"}]}, "format"=>:json, "controller"=>"coordinates", "action"=>"update", "id"=>"8", "coordinate"=>{}} permitted: false>
+    @coordinate = Coordinate.find(params[:id])
+    @categorys = @coordinate.category_tags
+
+    i = 0
+    @categorys.each do |category|
+      category.update(name: coordinate_params[:coordinate_items][i][:name], color: coordinate_params[:coordinate_items][i][:color])
+      i += 1
+    end
+
+    if @coordinate.update(name: coordinate_params[:coordinate_name])
+      render :show, status: :ok
+    else
+      render json: @coordinate.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -50,7 +65,7 @@ class CoordinatesController < ApplicationController
   private
   def coordinate_params
     params.fetch(:params, {}).permit(
-      :gender_id, :coordinate_name, :coordinate_image, coordinate_items: [:category_name, :category_color]
+      :gender_id, :coordinate_name, :coordinate_image, coordinate_items: [:name, :color]
     )
   end
 end
