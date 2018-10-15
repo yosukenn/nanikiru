@@ -39,6 +39,13 @@ class CoordinatesController < ApplicationController
     # <ActionController::Parameters {"params"=>{"coordinate_name"=>"モノトーンストリート", "coordinate_items"=>[{"name"=>"ブルゾン", "color"=>"ブラック"}, {"name"=>"スウェット", "color"=>"グレー"}, {"name"=>"スニーカー", "color"=>"グレー"}]}, "format"=>:json, "controller"=>"coordinates", "action"=>"update", "id"=>"8", "coordinate"=>{}} permitted: false>
     @coordinate = Coordinate.find(params[:id])
     @categorys = @coordinate.category_tags
+
+    i = 0
+    @categorys.each do |category|
+      category.update(name: coordinate_params[:coordinate_items][i][:name], color: coordinate_params[:coordinate_items][i][:color])
+      i += 1
+    end
+
     if @coordinate.update(name: coordinate_params[:coordinate_name])
       render :show, status: :ok
     else
