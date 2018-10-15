@@ -74,7 +74,6 @@
           }
         })
         .then((response) => {
-          console.log(response.data);
           this.coordinate_name = response.data.coordinate.name
         }, (error) => {
           console.log(error);

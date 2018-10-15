@@ -1,6 +1,6 @@
 class CoordinatesController < ApplicationController
   before_action :authenticate_user!
-  protect_from_forgery except: :create
+  protect_from_forgery except: [:create, :update]
 
   def index
     if params[:gender_id] && params[:color_tag] && params[:category_tag]
@@ -38,8 +38,9 @@ class CoordinatesController < ApplicationController
   def update
     # <ActionController::Parameters {"params"=>{"coordinate_name"=>"モノトーンストリート", "coordinate_items"=>[{"name"=>"ブルゾン", "color"=>"ブラック"}, {"name"=>"スウェット", "color"=>"グレー"}, {"name"=>"スニーカー", "color"=>"グレー"}]}, "format"=>:json, "controller"=>"coordinates", "action"=>"update", "id"=>"8", "coordinate"=>{}} permitted: false>
     @coordinate = Coordinate.find(params[:id])
+    @categorys = @coordinate.category_tags
     if @coordinate.update(name: coordinate_params[:coordinate_name])
-      render :show, status: :created
+      render :show, status: :ok
     else
       render json: @coordinate.errors, status: :unprocessable_entity
     end
