@@ -16,9 +16,9 @@ class CoordinatesController < ApplicationController
     items = []
 
     coordinate_params[:coordinate_items].each do |coordinate_item|
-      if coordinate_item[:category_name] != '' && coordinate_item[:category_color] != '' && !CategoryTag.find_by(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
-        @coordinate.category_tags.build(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
-      elsif category = CategoryTag.find_by(name: coordinate_item[:category_name], color: coordinate_item[:category_color])
+      if coordinate_item[:name] != '' && coordinate_item[:color] != '' && !CategoryTag.find_by(name: coordinate_item[:name], color: coordinate_item[:color])
+        @coordinate.category_tags.build(name: coordinate_item[:name], color: coordinate_item[:color])
+      elsif category = CategoryTag.find_by(name: coordinate_item[:name], color: coordinate_item[:color])
         @coordinate.category_tags << category
       end
     end
@@ -58,7 +58,7 @@ class CoordinatesController < ApplicationController
   private
   def coordinate_params
     params.fetch(:params, {}).permit(
-      :gender_id, :coordinate_name, :coordinate_image, coordinate_items: [:category_name, :category_color]
+      :gender_id, :coordinate_name, :coordinate_image, coordinate_items: [:name, :color]
     )
   end
 end
