@@ -5,7 +5,7 @@
           <form>
           <div class="modal-header">
             <slot name="header">
-              <h3><input v-model="coordinate_name" type="text" class="form-control"></h3>
+              <h3 class="col"><input v-model="coordinate_name" type="text" class="form-control"></h3>
             </slot>
             <button class="modal-default-button btn btn-secondary" @click="$emit('close')">
               x
