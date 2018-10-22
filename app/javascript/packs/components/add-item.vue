@@ -49,6 +49,14 @@
     },
     methods: {
       addItem: function() {
+        axios.post(
+        )
+        .then((response) => {
+
+        }, (error) => {
+          console.log(error);
+        });
+
         this.$emit('close');
       }
     }
