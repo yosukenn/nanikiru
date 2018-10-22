@@ -1,7 +1,7 @@
 <template>
     <div class="modal-mask">
       <div class="modal-wrapper">
-        <div @submit.prevent="updateCoordinate" class="modal-container">
+        <div @submit.prevent="addItem" class="modal-container">
           <form>
           <div class="modal-header">
             <slot name="header">
@@ -37,4 +37,20 @@
 </template>
 
 <script>
+  import axios from 'axios';
+
+  export default {
+    data: function() {
+      return {
+        coordinate_item: {
+          name: '', color: ''
+        }
+      }
+    },
+    methods: {
+      addItem: function() {
+        this.$emit('close');
+      }
+    }
+  }
 </script>
