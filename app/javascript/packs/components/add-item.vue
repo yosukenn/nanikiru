@@ -49,14 +49,13 @@
     },
     methods: {
       addItem: function() {
-        axios.post(
+        axios.post('/category_tags'
         )
         .then((response) => {
 
         }, (error) => {
           console.log(error);
         });
-
         this.$emit('close');
       }
     }

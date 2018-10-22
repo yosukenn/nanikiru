@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   defaults format: :json do
     resources :coordinates, only: [:index, :create, :show, :update, :destroy]
     resources :users, only: :index
+    resources :category_tags, only: :create
   end
 end
