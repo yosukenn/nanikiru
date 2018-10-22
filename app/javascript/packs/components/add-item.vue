@@ -5,9 +5,9 @@
           <form>
           <div class="modal-header">
             <slot name="header">
-              <h3 class="col">追加する項目を入力してください</h3>
+              <h3 class="col">追加する項目を入力</h3>
             </slot>
-            <button class="modal-default-button btn btn-secondary">
+            <button class="modal-default-button btn btn-secondary" @click="$emit('close')">
               x
             </button>
           </div>
@@ -15,14 +15,10 @@
             <slot name="body">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col">
-                    <div class="col">
-                      <input placeholder="category" type="text" class="form-control">
+                    <div class="row">
+                      <input placeholder="category" type="text" class="form-control col mx-3">
+                      <input placeholder="color" type="text" class="form-control col mx-3">
                     </div>
-                    <div class="col">
-                      <input placeholder="category" type="text" class="form-control">
-                    </div>
-                  </div>
                 </div>
               </div>
             </slot>
