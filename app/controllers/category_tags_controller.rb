@@ -3,4 +3,11 @@ class CategoryTagsController < ApplicationController
 
   def create
   end
+
+  private
+  def category_tag_params
+    params.permit(
+      :id, coordinate_item: [:name, :color]
+    )
+  end
 end

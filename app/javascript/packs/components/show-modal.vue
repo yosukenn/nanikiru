@@ -51,7 +51,7 @@
       </div>
     </div>
     <edit-modal :editTarget="coordinate" v-if="editModal" @close="editModal = false"></edit-modal>
-    <add-modal v-if="addModal" @close="addModal = false"></add-modal>
+    <add-modal :coordinateId="coordinate.coordinate.id" v-if="addModal" @close="addModal = false"></add-modal>
   </div>
   </transition>
 </template>

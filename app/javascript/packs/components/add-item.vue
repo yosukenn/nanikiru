@@ -16,8 +16,8 @@
               <div class="container-fluid">
                 <div class="row">
                     <div class="row">
-                      <input placeholder="category" type="text" class="form-control col mx-3">
-                      <input placeholder="color" type="text" class="form-control col mx-3">
+                      <input v-model="coordinate_item.name" placeholder="category" type="text" class="form-control col mx-3">
+                      <input v-model="coordinate_item.color" placeholder="color" type="text" class="form-control col mx-3">
                     </div>
                 </div>
               </div>
@@ -40,8 +40,10 @@
   import axios from 'axios';
 
   export default {
+    props: ['coordinateId'],
     data: function() {
       return {
+        id: this.coordinateId,
         coordinate_item: {
           name: '', color: ''
         }
@@ -49,8 +51,10 @@
     },
     methods: {
       addItem: function() {
-        axios.post('/category_tags'
-        )
+        axios.post('/category_tags', {
+            id: this.id,
+            coordinate_item: this.coordinate_item
+        })
         .then((response) => {
 
         }, (error) => {
