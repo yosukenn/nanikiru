@@ -5,7 +5,7 @@
           <form>
           <div class="modal-header">
             <slot name="header">
-              <h3><input v-model="coordinate_name" type="text" class="form-control"></h3>
+              <h3 class="col"><input v-model="coordinate_name" type="text" class="form-control"></h3>
             </slot>
             <button class="modal-default-button btn btn-secondary" @click="$emit('close')">
               x
@@ -81,21 +81,4 @@
       }
     }
   }
-
-  // editTarget {
-  //   categorys {
-  //     {color: "", name: ""},
-  //     {color: "", name: ""},
-  //     {color: "", name: ""}
-  //   },
-  //   coordinate {
-  //     current_user_id: 0,
-  //     gender_id: 0.
-  //     id: 0,
-  //     image: "fff",
-  //     name: "jjj",
-  //     updated_at: "9dv",
-  //     user_id: 1
-  //   }
-  // }
 </script>

@@ -36,7 +36,7 @@
           </div>
           <div v-if="coordinate.coordinate.user_id == coordinate.coordinate.current_user_id" class="modal-footer">
             <slot name="footer">
-              <button class="modal-default-button btn btn-default">
+              <button @click="addModal = true" class="modal-default-button btn btn-default">
                 追加
               </button>
               <button @click="showEdit" class="modal-default-button btn btn-default">
@@ -51,6 +51,7 @@
       </div>
     </div>
     <edit-modal :editTarget="coordinate" v-if="editModal" @close="editModal = false"></edit-modal>
+    <add-modal :coordinateId="coordinate.coordinate.id" v-if="addModal" @close="addModal = false"></add-modal>
   </div>
   </transition>
 </template>
@@ -58,16 +59,19 @@
 <script>
   import axios from 'axios';
   import EditModal from './edit-modal.vue'
+  import AddModal from './add-item.vue'
 
   export default {
     props: ['coordinate'],
     data: function() {
       return {
-          editModal: false
+          editModal: false,
+          addModal: false
       }
     },
     components: {
-      'edit-modal': EditModal
+      'edit-modal': EditModal,
+      'add-modal': AddModal
     },
     methods: {
       deleteCoordinate: function() {
