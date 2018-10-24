@@ -1,13 +1,13 @@
 <div class="background w-100 py-5">
   <div class="text-center float-left w-50 h-100 pt-5">
-    <div class="h-50 mt-5">
-      <h1>Nanikiru?</h1>
-      <p>あなたの今日の主役は何ですか？</p>
-      <p>投稿してあるコーディネートを参考に毎日をもっと楽しくしよう！</p>
+    <div class="h-50 mt-5 pl-5 ml-5">
+      <h1 class="app-title display-1 text-light">Nanikiru?</h1>
+      <h4 class="text-white-50 mt-5">あなたの今日の主役は何ですか？</h4>
+      <h5 class="text-white-50 mt-3">今日のコーディネートを決めて毎日をもっと楽しく！</h5>
     </div>
   </div>
-  <div class="text-center float-right w-50 mt-5">
-    <div class="user-from py-5 w-50 mx-auto">
+  <div class="text-center float-right w-50 mt-5 pr-5">
+    <div class="user-form p-5 w-50 mx-auto rounded">
       <h2 class="mb-4">Please Sign in</h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' }) do |f| %>
         <div class="field">
