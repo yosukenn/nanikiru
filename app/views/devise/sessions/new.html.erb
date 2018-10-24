@@ -1,35 +1,41 @@
-<div class="background w-100 py-5">
-  <div class="text-center float-left w-50 h-100 pt-5">
-    <div class="h-50 mt-5 pl-5 ml-5">
-      <h1 class="app-title display-1 text-light">Nanikiru?</h1>
-      <h4 class="text-white-50 mt-5">あなたの今日の主役は何ですか？</h4>
-      <h5 class="text-white-50 mt-3">今日のコーディネートを決めて毎日をもっと楽しく！</h5>
+<div class="background w-100">
+  <div class="background__wrapper py-5">
+
+
+    <div class="text-center float-left w-50 h-100 pt-5">
+      <div class="h-50 mt-5 pl-5 ml-5">
+        <h1 class="app-title display-1 text-light">Nanikiru?</h1>
+        <h4 class="text-white-50 mt-5">あなたの今日の主役は何ですか？</h4>
+        <h5 class="text-white-50 mt-3">今日のコーディネートを決めて毎日をもっと楽しく！</h5>
+      </div>
     </div>
-  </div>
-  <div class="text-center float-right w-50 mt-5 pr-5">
-    <div class="user-form p-5 w-50 mx-auto rounded">
-      <h2 class="mb-4">Please Sign in</h2>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' }) do |f| %>
-        <div class="field">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address', class: 'form-control', id: 'inputEmail' %>
-        </div>
-
-        <div class="field">
-          <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'form-control', id: 'inputPassword' %>
-        </div>
-
-        <% if devise_mapping.rememberable? -%>
-          <div class="field text-left mt-3">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+    <div class="text-center float-right w-50 mt-5 pr-5">
+      <div class="user-form p-5 w-50 mx-auto rounded">
+        <h2 class="mb-4">Please Sign in</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' }) do |f| %>
+          <div class="field">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address', class: 'form-control', id: 'inputEmail' %>
           </div>
-        <% end -%>
 
-        <div class="actions my-3">
-          <%= f.button "Sign in", type: 'submit', class: 'btn btn-lg btn-primary btn-bloc w-100 field' %>
-        </div>
-      <% end %>
-      <%= render "devise/shared/links" %>
+          <div class="field">
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'form-control', id: 'inputPassword' %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="field text-left mt-3">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+
+          <div class="actions my-3">
+            <%= f.button "Sign in", type: 'submit', class: 'btn btn-lg btn-primary btn-bloc w-100 field' %>
+          </div>
+        <% end %>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
+
   </div>
+
 </div>
