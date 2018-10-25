@@ -1,7 +1,7 @@
 <template>
   <!-- 検索フォーム -->
   <div>
-    <h1 class="text-center pt-5 pb-3 font-weight-bold">今日の主役は何ですか？</h1>
+    <h1 class="text-center pt-5 pb-3 font-weight-bold text-light">今日の主役は何ですか？</h1>
     <form @submit.prevent="searchCoordinates" class="needs-validation px-5" novalidate>
       <div class="form-row">
         <div class="col-md-4 mb-3">
@@ -36,7 +36,7 @@
         <img class="card-img-top" v-bind:src=coordinate.image alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{ coordinate.name }}</h5>
-          <p class="card-text"><small class="text-muted">{{ coordinate.updated_at }}</small></p>
+          <p class="card-text"><small class="text-dark">{{ coordinate.updated_at }}</small></p>
         </div>
       </div>
     </div>
@@ -111,3 +111,10 @@
     }
   }
 </script>
+
+
+<style scoped>
+  .card {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+</style>
