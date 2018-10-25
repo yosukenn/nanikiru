@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark ">
     <div class="container">
       <a class="navbar-brand" href="#">NANIKIRU?</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,3 +33,9 @@
     </div>
   </nav>
 </template>
+
+<style scoped>
+  .navbar-brand {
+    font-family: 'Courier New';
+  }
+</style>
