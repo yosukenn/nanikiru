@@ -8,7 +8,7 @@
     </div>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item" active-class="router-link-active">
           <router-link to="/" class="nav-link">
             Coordinates
             <span class="sr-only">
@@ -33,6 +33,12 @@
     </div>
   </nav>
 </template>
+
+<script>
+  export default {
+
+  }
+</script>
 
 <style scoped>
   .navbar-brand {
