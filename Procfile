@@ -1,1 +1,1 @@
-web: bundle exec puma -p $POST
+web: bundle exec puma -p $PORT
