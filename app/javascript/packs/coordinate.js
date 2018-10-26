@@ -1,4 +1,5 @@
 import Vue from 'vue/dist/vue.esm.js'
+import axios from 'axios'
 import Router from './router/router'
 import Header from './components/header.vue'
 import ShowModal from './components/show-modal.vue'
