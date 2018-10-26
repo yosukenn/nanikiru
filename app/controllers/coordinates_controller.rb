@@ -1,6 +1,5 @@
 class CoordinatesController < ApplicationController
   before_action :authenticate_user!
-  protect_from_forgery except: [:create, :update]
 
   def index
     if params[:gender_id] && params[:color_tag] && params[:category_tag]

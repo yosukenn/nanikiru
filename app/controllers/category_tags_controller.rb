@@ -1,5 +1,4 @@
 class CategoryTagsController < ApplicationController
-  protect_from_forgery except: :create
 
   def create
     coordinate = Coordinate.find(category_tag_params[:id])
