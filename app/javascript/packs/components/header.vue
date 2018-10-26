@@ -8,8 +8,8 @@
     </div>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item" active-class="router-link-active">
-          <router-link to="/" class="nav-link">
+        <li class="nav-item">
+          <router-link to="/" class="nav-link" exact-active-class="active">
             Coordinates
             <span class="sr-only">
               (current)
@@ -17,12 +17,12 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/mycoorde" class="nav-link">
+          <router-link to="/mycoorde" class="nav-link" exact-active-class="active">
             MyCoorde
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/about" class="nav-link">
+          <router-link to="/about" class="nav-link" exact-active-class="active">
             About
           </router-link>
         </li>
