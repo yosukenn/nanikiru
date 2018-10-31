@@ -1,7 +1,14 @@
 require "application_system_test_case"
 
 class CoordinatesTest < ApplicationSystemTestCase
-  test "visiting the index" do
+  setup do
+    @coordinate = Coordinate.new(name: '定番ジャケット', image: 'https://img1.kakaku.k-img.com/images/tasclapicv/450/000/000/1/1376/tasclapimage_1376_12_1.jpg?d=20160316134944', gender_id: 1, user_id: 1)
+    @coordinate.category_tags.build(name: 'ジャケット', color: 'ネイビー')
+    @coordinate.save
     visit root_path
+  end
+
+  test "visiting the index" do
+    assert_text '定番ジャケット'
   end
 end
