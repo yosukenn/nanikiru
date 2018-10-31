@@ -1,3 +1,6 @@
+Gender.create(gender: 'man')
+Gender.create(gender: 'woman')
+
 coordinate1 = Coordinate.new(name: 'テーラードジャケットコーデ', image: 'https://o.imgz.jp/fashionnews/106274/kbeigeqaljrbonh.jpg', gender_id: 1, user_id: 1)
 coordinate1.category_tags.build(name: 'テーラードジャケット', color: 'ブラック')
 coordinate1.save
