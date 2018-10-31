@@ -11,7 +11,7 @@ class CoordinatesController < ApplicationController
   end
 
   def create
-    @coordinate = Coordinate.new(name: coordinate_params[:coordinate_name], image: coordinate_params[:coordinate_image], gender_id: coordinate_params[:gender_id], user_id: current_user.id)
+    @coordinate = Coordinate.new(name: coordinate_params[:coordinate_name], image: coordinate_params[:coordinate_image], gender_id: coordinate_params[:gender_id].to_i, user_id: current_user.id)
     items = []
 
     coordinate_params[:coordinate_items].each do |coordinate_item|
